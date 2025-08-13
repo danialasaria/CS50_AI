@@ -76,7 +76,7 @@ def winner(board):
     #check diagonals        
     if board[0][0]==board[1][1] == board[2][2] and board[0][0] is not None:
         return board[0][0]
-    #col i
+    
     if board[0][2]==board[1][1] == board[2][0] and board[0][2] is not None:
         return board[0][2]
     
@@ -117,6 +117,7 @@ def max_value(board, alpha, beta):
             best_move = move
             # Correct alpha update: compare against current alpha, not beta
             alpha = max(alpha, best_score)
+        #O would never allow as they can enforce a better outcome with beta
         if best_score >= beta:
             break #prune branches left
     
